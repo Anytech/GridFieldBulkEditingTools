@@ -107,7 +107,8 @@ class EditHandler extends Handler
      */
     public function Link($action = null)
     {
-        return Controller::join_links(parent::Link(), $this->stat('url_segment'), $action);
+        $urlSegment = self::$url_segment;
+        return Controller::join_links(parent::Link(), $urlSegment, $action);
     }
 
     /**
